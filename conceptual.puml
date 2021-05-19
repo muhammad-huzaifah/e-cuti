@@ -3,27 +3,36 @@ entity Pegawai{
 
 }
 
+entity User{
+
+}
+
+entity Bagian{
+
+}
+
+entity Form_Cuti_Tahunan{
+
+}
+
 entity Jenis{
 
 }
 
-entity Alasan{
+entity Admin_Cuti{
 
 }
 
-entity Lamanya_cuti{
+entity Status_Admin_Cuti{
 
 }
 
-entity Catatan{
-
-}
-
-entity Alamat_Cuti{
-
-}
 
 entity Pertimbangan{
+
+}
+
+entity Status_Pertimbangan{
 
 }
 
