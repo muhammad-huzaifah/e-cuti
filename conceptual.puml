@@ -1,0 +1,34 @@
+@startuml
+entity Pegawai{
+
+}
+
+entity Jenis{
+
+}
+
+entity Alasan{
+
+}
+
+entity Lamanya_cuti{
+
+}
+
+entity Catatan{
+
+}
+
+entity Alamat_Cuti{
+
+}
+
+entity Pertimbangan{
+
+}
+
+entity Keputusan_Pejabat{
+
+}
+
+@enduml
