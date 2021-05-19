@@ -1,6 +1,6 @@
 @startuml
 entity Pegawai{
-* id : INT
+* id_pegawai : INT
 --
 nama : VARCHAR
 jabatan : VARCHAR
@@ -9,8 +9,28 @@ masa_kerja : VARCHAR
 
 }
 
-entity Form_Permintaan{
-* id : INT
+entity User{
+* id_user : INT
+--
+nama_user : VARCHAR
+password : VARCHAR
+hak_akses : INT
+aktif : INT
+
+}
+
+entity Bagian{
+* id_bagian : INT
+--
+bagian_ortala : INT
+bagian_umum : INT
+bagian_keuangan : INT
+bagian_kepegawaian : INT
+
+}
+
+entity Form_Cuti_Tahunan{
+* id_form_cuti_tahunan : INT
 --
 no_form : VARCHAR
 tanggal_cuti : DATE
@@ -18,29 +38,66 @@ jenis_cuti : VARCHAR
 mulai_cuti : DATE
 lama_cuti : VARCHAR
 selesai_cuti : DATE
-alasan : VARCHAR
+sisa_cuti : INT
+alasan_cuti : VARCHAR
+alamat_cuti : VARCHAR
+no_hp : INT
 
 }
 
 entity Jenis{
-* id : INT
+* id_jenis : INT
 --
+cuti_tahunan : INT
+cuti_sakit : INT
+cuti_melahirkan : INT
+cuti_alasan_penting : INT
+cuti_diluar_tanggungan_negara : INT
 
 }
 
-entity Catatan{
-
+entity Admin_Cuti{
+* id_admin_cuti : INT
+--
+status : INT
+catatan : VARCHAR
 }
 
-entity Alamat_Cuti{
-
+entity Status_Admin_Cuti{
+* id_status_admin_cuti : INT
+--
+ tidak_dikembalikan: INT
+ dikembalikan : INT
 }
+
 
 entity Pertimbangan{
+* id_pertimbangan : INT
+--
+status : INT
+alasan : VARCHAR
+
+}
+
+entity Status_Pertimbangan{
+* id_status_pertimbangan : INT
+--
+disetujui : INT
+perubahan : INT
+ditangguhkan : INT
+tidak_disetujui : INT
+alasan : VARCHAR
 
 }
 
 entity Keputusan_Pejabat{
+* id_keputusan_pejabat : INT
+--
+disetujui : INT
+perubahan : INT
+ditangguhkan : INT
+tidak_disetujui : INT
+alasan : VARCHAR
 
 }
 
