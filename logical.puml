@@ -1,0 +1,47 @@
+@startuml
+entity Pegawai{
+* id : INT
+--
+nama : VARCHAR
+jabatan : VARCHAR
+nip : INT
+masa_kerja : VARCHAR
+
+}
+
+entity Form_Permintaan{
+* id : INT
+--
+no_form : VARCHAR
+tanggal_cuti : DATE
+jenis_cuti : VARCHAR
+mulai_cuti : DATE
+lama_cuti : VARCHAR
+selesai_cuti : DATE
+alasan : VARCHAR
+
+}
+
+entity Jenis{
+* id : INT
+--
+
+}
+
+entity Catatan{
+
+}
+
+entity Alamat_Cuti{
+
+}
+
+entity Pertimbangan{
+
+}
+
+entity Keputusan_Pejabat{
+
+}
+
+@enduml
