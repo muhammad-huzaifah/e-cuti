@@ -26,6 +26,7 @@ bagian_ortala : INT
 bagian_umum : INT
 bagian_keuangan : INT
 bagian_kepegawaian : INT
+bagian_fungsional_tertentu : INT
 
 }
 
