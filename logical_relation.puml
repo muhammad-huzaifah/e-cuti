@@ -1,0 +1,111 @@
+@startuml
+entity Pegawai{
+* id_pegawai : INT
+--
+nama : VARCHAR
+jabatan : VARCHAR
+nip : INT
+masa_kerja : VARCHAR
+
+}
+
+entity User{
+* id_user : INT
+--
+nama_user : VARCHAR
+password : VARCHAR
+hak_akses : INT
+aktif : INT
+
+}
+
+entity Bagian{
+* id_bagian : INT
+--
+bagian_ortala : INT
+bagian_umum : INT
+bagian_keuangan : INT
+bagian_kepegawaian : INT
+bagian_fungsional_tertentu : INT
+
+}
+
+entity Form_Cuti{
+* id_form_cuti_tahunan : INT
+--
+no_form : VARCHAR
+tanggal_cuti : DATE
+jenis_cuti : VARCHAR
+mulai_cuti : DATE
+lama_cuti : VARCHAR
+selesai_cuti : DATE
+sisa_cuti : INT
+alasan_cuti : VARCHAR
+alamat_cuti : VARCHAR
+no_hp : INT
+
+}
+
+entity Jenis{
+* id_jenis : INT
+--
+cuti_tahunan : INT
+cuti_sakit : INT
+cuti_melahirkan : INT
+cuti_alasan_penting : INT
+cuti_diluar_tanggungan_negara : INT
+
+}
+
+entity Admin_Cuti{
+* id_admin_cuti : INT
+--
+ tidak_dikembalikan: INT
+ dikembalikan : INT
+ catatan : VARCHAR
+}
+
+entity Atasan_Langsung{
+* id_atasan_langsung : INT
+--
+disetujui : INT
+perubahan : INT
+ditangguhkan : INT
+tidak_disetujui : INT
+alasan : VARCHAR
+
+}
+
+entity Keputusan_Pejabat{
+* id_keputusan_pejabat : INT
+--
+disetujui : INT
+perubahan : INT
+ditangguhkan : INT
+tidak_disetujui : INT
+alasan : VARCHAR
+
+}
+
+User ||--|| Pegawai
+
+Form_Cuti ||--|{ Jenis
+
+Pegawai ||--|{ Form_Cuti : input
+
+Form_Cuti }|--|| Admin_Cuti
+
+Admin_Cuti ||--|{ Atasan_Langsung
+
+Pegawai }|--|| Atasan_Langsung : Pertimbangan atasan
+
+Atasan_Langsung ||--|| Keputusan_Pejabat
+
+Admin_Cuti ||--|{ Bagian
+
+Admin_Cuti ||--|{ Jenis
+
+Admin_Cuti ||--|{ Keputusan_Pejabat
+
+
+@enduml
